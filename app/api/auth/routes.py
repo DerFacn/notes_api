@@ -7,15 +7,6 @@ from datetime import datetime, timedelta
 
 
 def signup():
-    """
-    Signup endpoint.
-    ---
-    tags:
-        ["auth"]
-    request:
-        username: User username
-        password: Hash
-    """
     data = request.get_json(silent=True)
     if not data:
         return jsonify({'message': 'The request body must contain JSON!'}), 409

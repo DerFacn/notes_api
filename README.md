@@ -1,5 +1,48 @@
 # Notes REST API docs
 
+## Start
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/derfacn/notes_api.git
+   ```
+
+2. Create a virtual environment in the project directory:
+
+   ```bash
+   cd notes_api
+   python -m venv venv
+   ```
+
+3. Activate the virtual environment:
+
+   - On Windows:
+
+     ```bash
+     venv\Scripts\activate
+     ```
+
+   - On macOS/Linux:
+
+     ```bash
+     source venv/bin/activate
+     ```
+
+4. Install project dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+   
+5. Start the app
+
+   ```bash
+   flask run
+   ```
+
+## Routes
+
 | Endpoint                               | Description                             | Method | Request                                | Response                                |
 |----------------------------------------|-----------------------------------------|--------|----------------------------------------|-----------------------------------------|
 | `/api/admin/create`                    | Creates a new user                      | POST   | {"username": "...", "password": "..."} | 201: Created, 409: Conflict             |
