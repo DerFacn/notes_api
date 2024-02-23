@@ -16,6 +16,10 @@ class User(Base):
     is_admin: Mapped[bool] = mapped_column(default=False)
     created_at: Mapped[str] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
+    @classmethod
+    def all_fields(cls):
+        return [c.key for c in cls.__table__.columns]
+
 
 class Note(Base):
     __tablename__ = 'notes'
@@ -23,3 +27,7 @@ class Note(Base):
     text: Mapped[str]
     user_uuid: Mapped[str] = mapped_column(ForeignKey('users.uuid'))
     user: Mapped[List["User"]] = relationship(back_populates='notes')
+
+    @classmethod
+    def all_fields(cls):
+        return [c.key for c in cls.__table__.columns]

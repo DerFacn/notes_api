@@ -13,3 +13,7 @@ app.register_blueprint(api.bp)
 
 from app.errors import app
 
+from app.commands import create_admin, user_seeder
+
+app.cli.add_command(create_admin)
+app.cli.add_command(user_seeder)

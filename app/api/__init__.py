@@ -1,7 +1,7 @@
 from flask import Blueprint
 from . import auth, notes, admin
 
-bp = Blueprint('api', __name__, url_prefix='/api')
+bp = Blueprint('api', __name__, url_prefix='/api/v1/')
 
 bp.register_blueprint(auth.bp)
 bp.register_blueprint(notes.bp)
