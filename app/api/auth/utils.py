@@ -1,5 +1,6 @@
 from bcrypt import gensalt, hashpw, checkpw
 from datetime import datetime, timedelta
+from flask import current_app
 import jwt
 
 
@@ -22,4 +23,4 @@ def create_token(identity):
         'uuid': identity,
         'exp': datetime.now() + timedelta(weeks=12)
     }
-    return jwt.encode(payload, app.config['JWT_SECRET_KEY'], algorithm='HS256')
+    return jwt.encode(payload, current_app.config['JWT_SECRET_KEY'], algorithm='HS256')
